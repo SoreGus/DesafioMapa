@@ -192,10 +192,28 @@
     }
 }
 
-
-
-
-
+- (MKAnnotationView *)mapView:(MKMapView *)aMapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+    {
+        return nil;
+    }
+    
+    static NSString * const identifier = @"MyCustomAnnotation";
+    
+    MKAnnotationView *annotationView = [aMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (annotationView) {
+        annotationView.annotation = annotation;
+    } else {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    }
+    NSString *formattedName = name;
+    formattedName = [formattedName lowercaseString];
+    formattedName = [formattedName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    annotationView.image = [UIImage imageNamed:formattedName];
+    return annotationView;
+}
 
 
 

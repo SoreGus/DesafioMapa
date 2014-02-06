@@ -25,7 +25,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nbA-1q-RED">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZTp-ck-o1w">
+                        <barButtonItem key="leftBarButtonItem" image="editIcon" id="ZTp-ck-o1w">
                             <connections>
                                 <segue destination="lIs-c1-gAb" kind="push" identifier="selectionSegue" id="QOp-ja-GML"/>
                             </connections>
@@ -162,6 +162,9 @@
             <point key="canvasLocation" x="364" y="50"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="editIcon" width="35" height="35"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

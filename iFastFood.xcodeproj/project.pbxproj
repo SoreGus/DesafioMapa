@@ -16,7 +16,6 @@
 		A0135ADC18A2AFA000B3E805 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0135ADB18A2AFA000B3E805 /* AppDelegate.m */; };
 		A0135ADF18A2AFA000B3E805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0135ADD18A2AFA000B3E805 /* Main.storyboard */; };
 		A0135AE218A2AFA000B3E805 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0135AE118A2AFA000B3E805 /* ViewController.m */; };
-		A0135AE418A2AFA000B3E805 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0135AE318A2AFA000B3E805 /* Images.xcassets */; };
 		A0135AEB18A2AFA000B3E805 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135AEA18A2AFA000B3E805 /* XCTest.framework */; };
 		A0135AEC18A2AFA000B3E805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135ACB18A2AFA000B3E805 /* Foundation.framework */; };
 		A0135AED18A2AFA000B3E805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135ACF18A2AFA000B3E805 /* UIKit.framework */; };
@@ -25,6 +24,7 @@
 		A0135B0118A2B02500B3E805 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135B0018A2B02500B3E805 /* MapKit.framework */; };
 		A0135B0318A2B02B00B3E805 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135B0218A2B02B00B3E805 /* CoreLocation.framework */; };
 		A0135B0618A2B21700B3E805 /* SelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0135B0518A2B21700B3E805 /* SelectTableViewController.m */; };
+		A0C937F718A3B97400F65563 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C937F618A3B97400F65563 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		A0135ADE18A2AFA000B3E805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0135AE018A2AFA000B3E805 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A0135AE118A2AFA000B3E805 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A0135AE318A2AFA000B3E805 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0135AE918A2AFA000B3E805 /* iFastFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFastFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0135AEA18A2AFA000B3E805 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A0135AF218A2AFA000B3E805 /* iFastFoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iFastFoodTests-Info.plist"; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		A0135B0218A2B02B00B3E805 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A0135B0418A2B21700B3E805 /* SelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTableViewController.h; sourceTree = "<group>"; };
 		A0135B0518A2B21700B3E805 /* SelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTableViewController.m; sourceTree = "<group>"; };
+		A0C937F618A3B97400F65563 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +126,7 @@
 		A0135AD118A2AFA000B3E805 /* iFastFood */ = {
 			isa = PBXGroup;
 			children = (
+				A0C937F618A3B97400F65563 /* Images.xcassets */,
 				A0135ADA18A2AFA000B3E805 /* AppDelegate.h */,
 				A0135ADB18A2AFA000B3E805 /* AppDelegate.m */,
 				A0135ADD18A2AFA000B3E805 /* Main.storyboard */,
@@ -135,7 +136,6 @@
 				A0135B0518A2B21700B3E805 /* SelectTableViewController.m */,
 				A0135AE018A2AFA000B3E805 /* ViewController.h */,
 				A0135AE118A2AFA000B3E805 /* ViewController.m */,
-				A0135AE318A2AFA000B3E805 /* Images.xcassets */,
 				A0135AD218A2AFA000B3E805 /* Supporting Files */,
 			);
 			path = iFastFood;
@@ -246,7 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0135AE418A2AFA000B3E805 /* Images.xcassets in Resources */,
+				A0C937F718A3B97400F65563 /* Images.xcassets in Resources */,
 				A0135AD618A2AFA000B3E805 /* InfoPlist.strings in Resources */,
 				A0135ADF18A2AFA000B3E805 /* Main.storyboard in Resources */,
 			);
