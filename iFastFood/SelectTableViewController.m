@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad
 {
-    fastFoods = [NSArray arrayWithObjects:@"McDonalds", @"Burger King", @"Bobs", @"Subway", @"Pizza Hut", nil];
+    fastFoods = [NSArray arrayWithObjects:@"McDonalds", @"Burger King", @"Bobs", @"Subway", @"Pizza Hut", @"Starbucks", @"Dominos", @"KFC", @"Carls Jr", @"Wendys", @"Taco Bell", @"Dunkin Donuts", @"Outback", @"Papa Johns", @"Applebees", nil];
 }
 
 

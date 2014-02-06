@@ -24,6 +24,7 @@
 		A0135B0118A2B02500B3E805 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135B0018A2B02500B3E805 /* MapKit.framework */; };
 		A0135B0318A2B02B00B3E805 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135B0218A2B02B00B3E805 /* CoreLocation.framework */; };
 		A0135B0618A2B21700B3E805 /* SelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0135B0518A2B21700B3E805 /* SelectTableViewController.m */; };
+		A0C7FA2918A3FD47001ED549 /* DetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C7FA2818A3FD47001ED549 /* DetailsTableViewController.m */; };
 		A0C937F718A3B97400F65563 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C937F618A3B97400F65563 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		A0135B0218A2B02B00B3E805 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A0135B0418A2B21700B3E805 /* SelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTableViewController.h; sourceTree = "<group>"; };
 		A0135B0518A2B21700B3E805 /* SelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTableViewController.m; sourceTree = "<group>"; };
+		A0C7FA2718A3FD47001ED549 /* DetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsTableViewController.h; sourceTree = "<group>"; };
+		A0C7FA2818A3FD47001ED549 /* DetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsTableViewController.m; sourceTree = "<group>"; };
 		A0C937F618A3B97400F65563 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +133,8 @@
 				A0135ADA18A2AFA000B3E805 /* AppDelegate.h */,
 				A0135ADB18A2AFA000B3E805 /* AppDelegate.m */,
 				A0135ADD18A2AFA000B3E805 /* Main.storyboard */,
+				A0C7FA2718A3FD47001ED549 /* DetailsTableViewController.h */,
+				A0C7FA2818A3FD47001ED549 /* DetailsTableViewController.m */,
 				1E6C186218A3BD230019DE29 /* FontPickerViewController.h */,
 				1E6C186318A3BD230019DE29 /* FontPickerViewController.m */,
 				A0135B0418A2B21700B3E805 /* SelectTableViewController.h */,
@@ -271,6 +276,7 @@
 				A0135B0618A2B21700B3E805 /* SelectTableViewController.m in Sources */,
 				A0135ADC18A2AFA000B3E805 /* AppDelegate.m in Sources */,
 				A0135AD818A2AFA000B3E805 /* main.m in Sources */,
+				A0C7FA2918A3FD47001ED549 /* DetailsTableViewController.m in Sources */,
 				1E6C186418A3BD230019DE29 /* FontPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
