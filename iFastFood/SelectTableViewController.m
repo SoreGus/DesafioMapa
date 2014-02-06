@@ -54,7 +54,6 @@
     NSString *formattedName = cell.textLabel.text;
     formattedName = [formattedName lowercaseString];
     formattedName = [formattedName stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSLog(@"%@", formattedName);
     cell.imageView.image = [UIImage imageNamed:formattedName];
     
     //verifica se a string fastFoodName nao é nula
