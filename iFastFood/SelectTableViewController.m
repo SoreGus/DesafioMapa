@@ -53,6 +53,11 @@
     
     // Configure the cell...
     cell.textLabel.text = fastFoods[indexPath.row];
+    NSString *formattedName = cell.textLabel.text;
+    formattedName = [formattedName lowercaseString];
+    formattedName = [formattedName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    cell.imageView.image = [UIImage imageNamed:formattedName];
+    
         
     //verifica se a string fastFoodName nao é nula
     if (_fastFoodName) {
