@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E6C186418A3BD230019DE29 /* FontPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C186318A3BD230019DE29 /* FontPickerViewController.m */; };
 		A0135ACC18A2AFA000B3E805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135ACB18A2AFA000B3E805 /* Foundation.framework */; };
 		A0135ACE18A2AFA000B3E805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135ACD18A2AFA000B3E805 /* CoreGraphics.framework */; };
 		A0135AD018A2AFA000B3E805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0135ACF18A2AFA000B3E805 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E6C186218A3BD230019DE29 /* FontPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontPickerViewController.h; sourceTree = "<group>"; };
+		1E6C186318A3BD230019DE29 /* FontPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontPickerViewController.m; sourceTree = "<group>"; };
 		A0135AC818A2AFA000B3E805 /* iFastFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFastFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0135ACB18A2AFA000B3E805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0135ACD18A2AFA000B3E805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				A0135ADA18A2AFA000B3E805 /* AppDelegate.h */,
 				A0135ADB18A2AFA000B3E805 /* AppDelegate.m */,
 				A0135ADD18A2AFA000B3E805 /* Main.storyboard */,
+				1E6C186218A3BD230019DE29 /* FontPickerViewController.h */,
+				1E6C186318A3BD230019DE29 /* FontPickerViewController.m */,
 				A0135B0418A2B21700B3E805 /* SelectTableViewController.h */,
 				A0135B0518A2B21700B3E805 /* SelectTableViewController.m */,
 				A0135AE018A2AFA000B3E805 /* ViewController.h */,
@@ -266,6 +271,7 @@
 				A0135B0618A2B21700B3E805 /* SelectTableViewController.m in Sources */,
 				A0135ADC18A2AFA000B3E805 /* AppDelegate.m in Sources */,
 				A0135AD818A2AFA000B3E805 /* main.m in Sources */,
+				1E6C186418A3BD230019DE29 /* FontPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +480,7 @@
 				A0135AFC18A2AFA000B3E805 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0135AFD18A2AFA000B3E805 /* Build configuration list for PBXNativeTarget "iFastFoodTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +489,7 @@
 				A0135AFF18A2AFA000B3E805 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 #import "SelectTableViewController.h"
+#import "CollorPickerViewController.h"
 
 @interface SelectTableViewController ()
 {
@@ -17,12 +18,13 @@
 
 @implementation SelectTableViewController
 
+
+
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
     fastFoods = [NSArray arrayWithObjects:@"McDonalds", @"Burger King", @"Bobs", @"Subway", @"Pizza Hut", nil];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -51,6 +53,8 @@
     
     // Configure the cell...
     cell.textLabel.text = fastFoods[indexPath.row];
+    cell.textLabel.textColor = [UIColor yellowColor];
+    //cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:(20.0)];
     
     //verifica se a string fastFoodName nao é nula
     if (_fastFoodName) {
