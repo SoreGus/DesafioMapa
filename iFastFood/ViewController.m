@@ -18,6 +18,50 @@
 
 @implementation ViewController
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    //mostra no mapa / zoom
+    CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc,250,250);
+    [mapView setRegion:region animated:YES];
+    
+}
+
+//zomm out no mapa para ver as pins
+-(void)zoomToFitMapAnnotations{
+    
+    if([mapView.annotations count] == 0)
+        return;
+    
+    CLLocationCoordinate2D topLeftCoord;
+    topLeftCoord.latitude = -90;
+    topLeftCoord.longitude = 180;
+    
+    CLLocationCoordinate2D bottomRightCoord;
+    bottomRightCoord.latitude = 90;
+    bottomRightCoord.longitude = -180;
+    
+    for(annotationPoint in mapView.annotations)
+    {
+        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotationPoint.coordinate.longitude);
+        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotationPoint.coordinate.latitude);
+        
+        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotationPoint.coordinate.longitude);
+        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotationPoint.coordinate.latitude);
+    }
+    
+    MKCoordinateRegion region;
+    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
+    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
+    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.1; // Add a little extra space on the sides
+    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.1; // Add a little extra space on the sides
+    
+    region = [mapView regionThatFits:region];
+    [mapView setRegion:region animated:YES];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,6 +70,7 @@
     //seta o delegate do map view
     [mapView setDelegate:self];
     mapView.showsUserLocation = YES;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,6 +162,9 @@
     annotationPoint = [[MKPointAnnotation alloc] init];
     annotationPoint.coordinate = location;
     [mapView addAnnotation:annotationPoint];
+    //metodo para dar zoom out
+    [self zoomToFitMapAnnotations];
+    
 }
 
 //unwind da table view de selecao de fast food

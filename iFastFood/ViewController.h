@@ -17,7 +17,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentControl;
-
+-(void)zoomToFitMapAnnotations;
 - (IBAction)mapTypeChanged:(id)sender;
 - (IBAction)searchFastFood:(id)sender;
 
