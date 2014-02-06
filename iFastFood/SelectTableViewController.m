@@ -53,9 +53,7 @@
     
     // Configure the cell...
     cell.textLabel.text = fastFoods[indexPath.row];
-    cell.textLabel.textColor = [UIColor yellowColor];
-    //cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:(20.0)];
-    
+        
     //verifica se a string fastFoodName nao é nula
     if (_fastFoodName) {
         //verifica se é a cell do restaurante selecionadoa anteriormente
