@@ -11,8 +11,6 @@
 @interface FontPickerViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UIPickerView *collorPicker;
 @property (weak, nonatomic) IBOutlet UILabel *exampleColor;
-@property (weak, nonatomic) IBOutlet UIPickerView *fontPicker;
 
 @property (retain,nonatomic) NSArray *colorArray ;
-@property (retain,nonatomic) NSArray *fontArray;
 @end

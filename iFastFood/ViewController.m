@@ -8,14 +8,11 @@
 
 #import "ViewController.h"
 #import "SelectTableViewController.h"
-#import "DetailsTableViewController.h"
 
 @interface ViewController ()
 {
     MKPointAnnotation *annotationPoint;
-    MKAnnotationView *annotationViewSelected;
     NSString *name;
-    MKRoute *route;
 }
 @end
 
@@ -63,6 +60,7 @@
     region = [mapView regionThatFits:region];
     [mapView setRegion:region animated:YES];
 }
+
 
 - (void)viewDidLoad
 {
@@ -121,11 +119,6 @@
     if (!mapView.annotations.count == 0) {
         [mapView removeAnnotations:mapView.annotations];
     }
-    
-    //verifica se há rotas traçadas e se houver, a remove
-    if (route) {
-        [mapView removeOverlay:route.polyline];
-    }
 }
 
 - (void)searchPlacesWithName:(NSString *)aName
@@ -168,9 +161,7 @@
     //cria e adiciona a annotation no mapa
     annotationPoint = [[MKPointAnnotation alloc] init];
     annotationPoint.coordinate = location;
-    annotationPoint.title = @"Details";
     [mapView addAnnotation:annotationPoint];
-    
     //metodo para dar zoom out
     [self zoomToFitMapAnnotations];
     
@@ -199,12 +190,6 @@
         controller.fastFoodName = name;
         }
     }
-    else if ([segue.identifier isEqualToString:@"calloutSegue"])
-    {
-        DetailsTableViewController *controller = [segue destinationViewController];
-        controller.name = name;
-        controller.routeDetails = route;
-    }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)aMapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -222,69 +207,22 @@
         annotationView.annotation = annotation;
     } else {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        annotationView.canShowCallout = YES;
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
-    
     NSString *formattedName = name;
-
     formattedName = [formattedName lowercaseString];
     formattedName = [formattedName stringByReplacingOccurrencesOfString:@" " withString:@""];
     annotationView.image = [UIImage imageNamed:formattedName];
-    
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-{
-    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:[view.annotation coordinate] addressDictionary:nil];
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    [self getDirectionsTo:mapItem];
-}
 
-- (void)getDirectionsTo:(MKMapItem *)destination
-{
-    //remove rota anterior
-    if (route) {
-        [mapView removeOverlay:route.polyline];
-    }
-    
-    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
-    request.source = [MKMapItem mapItemForCurrentLocation];
-    request.destination = destination;
-    
-    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
-    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
-        if (error) {
-            NSLog(@"Error %@", error);
-        } else {
-            [self showRoute:response];
-        }
-    }];
-}
 
-- (void)showRoute:(MKDirectionsResponse *)response
-{
-    route = response.routes.lastObject;
-    [mapView addOverlay:route.polyline];
-}
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    [self performSegueWithIdentifier:@"calloutSegue" sender:self];
-    annotationViewSelected = view;
-}
 
-#pragma mark
-#pragma mark - UIMapViewDelegate
 
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
-{
-    MKPolylineRenderer *lineView = [[MKPolylineRenderer alloc] initWithPolyline:route.polyline];
-    lineView.strokeColor = [UIColor blueColor];
-    lineView.lineWidth = 3;
-    return lineView;
-}
+
+
+
 
 
 @end

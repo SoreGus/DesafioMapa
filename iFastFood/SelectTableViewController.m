@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad
 {
-    fastFoods = [NSArray arrayWithObjects:@"McDonalds", @"Burger King", @"Bobs", @"Subway", @"Pizza Hut", @"Starbucks", @"Dominos", @"KFC", @"Carls Jr", @"Wendys", @"Taco Bell", @"Dunkin Donuts", @"Outback", @"Papa Johns", @"Applebees", nil];
+    fastFoods = [NSArray arrayWithObjects:@"McDonalds", @"Burger King", @"Bobs", @"Subway", @"Pizza Hut", nil];
 }
 
 
@@ -53,7 +53,6 @@
     
     // Configure the cell...
     cell.textLabel.text = fastFoods[indexPath.row];
-    
     NSString *formattedName = cell.textLabel.text;
     formattedName = [formattedName lowercaseString];
     formattedName = [formattedName stringByReplacingOccurrencesOfString:@" " withString:@""];
