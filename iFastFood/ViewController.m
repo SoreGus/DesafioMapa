@@ -64,7 +64,6 @@
     [mapView setRegion:region animated:YES];
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -171,6 +170,7 @@
     annotationPoint.coordinate = location;
     annotationPoint.title = @"Details";
     [mapView addAnnotation:annotationPoint];
+    
     //metodo para dar zoom out
     [self zoomToFitMapAnnotations];
     
@@ -227,9 +227,11 @@
     }
     
     NSString *formattedName = name;
+
     formattedName = [formattedName lowercaseString];
     formattedName = [formattedName stringByReplacingOccurrencesOfString:@" " withString:@""];
     annotationView.image = [UIImage imageNamed:formattedName];
+    
     return annotationView;
 }
 
@@ -283,11 +285,6 @@
     lineView.lineWidth = 3;
     return lineView;
 }
-
-
-
-
-
 
 
 @end

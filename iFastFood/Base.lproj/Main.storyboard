@@ -155,7 +155,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nothing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGd-P2-oZq">
-                                <rect key="frame" x="139" y="168" width="58" height="21"/>
+                                <rect key="frame" x="139" y="168" width="146" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -167,6 +167,7 @@
                     <connections>
                         <outlet property="collorPicker" destination="UTx-fs-D0D" id="wJO-lr-W2h"/>
                         <outlet property="exampleColor" destination="DGd-P2-oZq" id="tcV-Hm-OKZ"/>
+                        <outlet property="fontPicker" destination="UTx-fs-D0D" id="xzS-nx-1J5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCg-5a-Paq" userLabel="First Responder" sceneMemberID="firstResponder"/>
