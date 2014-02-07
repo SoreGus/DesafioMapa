@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5037.3" systemVersion="13A3017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VOX-Jd-h2t">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VOX-Jd-h2t">
+>>>>>>> f58018f4311fc8208744667bfe24901124beb7a0
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -50,6 +54,7 @@
                     <connections>
                         <outlet property="mapTypeSegmentControl" destination="01a-8v-hsU" id="m24-iu-egc"/>
                         <outlet property="mapView" destination="tyy-05-ZtN" id="d08-kS-gip"/>
+                        <segue destination="dXk-XR-fpB" kind="push" identifier="calloutSegue" id="vWb-pV-kbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -100,7 +105,36 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1127" y="48"/>
+            <point key="canvasLocation" x="1237" y="48"/>
+        </scene>
+        <!--Details Table View Controller - Directions-->
+        <scene sceneID="xy5-lj-zuW">
+            <objects>
+                <tableViewController id="dXk-XR-fpB" customClass="DetailsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wqN-ei-eyO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="afx-jD-9kX">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="afx-jD-9kX" id="V81-XO-NZJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dXk-XR-fpB" id="P8c-zx-IN8"/>
+                            <outlet property="delegate" destination="dXk-XR-fpB" id="NjK-xp-tje"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Directions" id="RtJ-O9-8EG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvE-pT-hb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237" y="730"/>
         </scene>
         <!--Font Picker View Controller-->
         <scene sceneID="kci-GR-tai">
@@ -115,7 +149,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTx-fs-D0D">
+<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="197" width="320" height="162"/>
+=======
+                                <rect key="frame" x="0.0" y="221" width="320" height="162"/>
+>>>>>>> f58018f4311fc8208744667bfe24901124beb7a0
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4k-6G-c5z">
@@ -125,7 +163,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nothing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGd-P2-oZq">
-                                <rect key="frame" x="139" y="168" width="58" height="21"/>
+                                <rect key="frame" x="139" y="168" width="146" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -137,11 +175,12 @@
                     <connections>
                         <outlet property="collorPicker" destination="UTx-fs-D0D" id="wJO-lr-W2h"/>
                         <outlet property="exampleColor" destination="DGd-P2-oZq" id="tcV-Hm-OKZ"/>
+                        <outlet property="fontPicker" destination="UTx-fs-D0D" id="xzS-nx-1J5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCg-5a-Paq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1481" y="48"/>
+            <point key="canvasLocation" x="1729" y="48"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hku-ca-Ayp">

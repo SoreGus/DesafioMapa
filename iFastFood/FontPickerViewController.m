@@ -10,7 +10,7 @@
 
 @interface FontPickerViewController ()
 {
-    NSString *selectedColor;
+
 }
 @end
 
@@ -23,6 +23,7 @@
     [self.collorPicker setDataSource:self];
     
     self.colorArray  = [[NSArray alloc] initWithObjects:@"Blue",@"Green",@"Orange",@"Purple",@"Red",@"Black" , nil];
+    self.fontArray  = [[NSArray alloc] initWithObjects:@"Damascus",@"Arial",@"Palatino",@"Papyrus",@"Courier",@"Didot" , nil];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -40,27 +41,36 @@
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return 2;
 }
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 5;
+    if (component == 0)
+        return self.colorArray.count;
+    else
+        return self.fontArray.count;
 }
 
+//retorna as palavras das opcoes
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
 {
-    
-    return [self.colorArray objectAtIndex:row];
-    
+    if (component == 0) {
+        return [self.colorArray objectAtIndex:row];
+    }
+   else if (component == 1)
+       return [self.fontArray objectAtIndex:row];
+    else
+        return nil;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
 {
     
-    selectedColor = [self.colorArray objectAtIndex:row];
-    self.exampleColor.text = selectedColor;
+    
+   self.exampleColor.text = @"Exemplo";
+    if (component == 0) {
     switch (row) {
         case 0:
             self.exampleColor.textColor = [UIColor blueColor];
@@ -89,9 +99,42 @@
         default:
             break;
     }
+    }
     
- 
+    if (component == 1) {
     
+    switch (row) {
+case 0:
+            self.exampleColor.font = [UIFont fontWithName:@"Damascus"size:20];
+    break;
+    
+case 1:
+     self.exampleColor.font = [UIFont fontWithName:@"Arial"size:20];
+    break;
+    
+case 2:
+     self.exampleColor.font = [UIFont fontWithName:@"Palatino"size:20];
+    break;
+case 3:
+    
+     self.exampleColor.font = [UIFont fontWithName:@"Papyrus"size:20];
+    break;
+case 4:
+    
+     self.exampleColor.font = [UIFont fontWithName:@"Courier"size:20];
+    break;
+    
+case 5:
+    self.exampleColor.font = [UIFont fontWithName:@"Didot"size:20];
+    break;
+    
+default:
+    break;
+}
+                              }
+
+
+
 }
 
 @end
